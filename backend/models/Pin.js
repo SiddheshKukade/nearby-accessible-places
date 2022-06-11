@@ -17,6 +17,7 @@ const PinSchema = new mongoose.Schema(
       required: true,
       min: 3,
     },
+    category: { type: String, required: true },
     long: {
       type: Number,
       required: true,
@@ -26,7 +27,7 @@ const PinSchema = new mongoose.Schema(
       required: true,
     },
   },
-  { timestamps: true } // to get created at and updated at timestams automatically 
+  { timestamps: true } // to get created at and updated at timestams automatically
 );
 
 module.exports = mongoose.model("Pin", PinSchema);

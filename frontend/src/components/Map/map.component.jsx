@@ -7,6 +7,14 @@ import {
 } from "@react-google-maps/api";
 
 const MapComponent = () => {
+  const [cLat, setcLat] = useState(20.0005);
+  const [cLang, setcLang] = useState(70.0005);
+  const zoomLevel = 15; // default zoom level
+  navigator.geolocation.getCurrentPosition((position) => {
+    setcLat(position.coords.latitude);
+    setcLang(position.coords.longitude);
+  });
+  console.log("this iis the objr", cLat , cLang);
   const initialMarkers = [
     {
       position: {
@@ -30,14 +38,22 @@ const MapComponent = () => {
         lng: 79.81464,
       },
       label: { color: "white", text: "P3" },
-      draggable: true, 
+      draggable: true,
     },
     {
       position: {
-        lat: 28.66159055115756,
-        lng: 77.20052705916758,
+        lat: cLat,
+        lng: cLang,
       },
       label: { color: "white", text: "Dental Hospital" },
+      draggable: true,
+    },
+    {
+      position: {
+        lat: 20.0024,
+        lng: 73.7945,
+      },
+      label: { color: "white", text: "Siddhesh Location" },
       draggable: true,
     },
   ];
@@ -51,8 +67,8 @@ const MapComponent = () => {
   };
 
   const center = {
-    lat: 28.626137,
-    lng: 79.821603,
+    lat: 20.0024,
+    lng: 73.7945,
   };
 
   const mapClicked = (event) => {
@@ -74,7 +90,7 @@ const MapComponent = () => {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={15}
+        zoom={zoomLevel}
         onClick={mapClicked}
       >
         {markers.map((marker, index) => (
@@ -85,6 +101,7 @@ const MapComponent = () => {
             draggable={marker.draggable}
             onDragEnd={(event) => markerDragEnd(event, index)}
             onClick={(event) => markerClicked(marker, index)}
+            
           >
             {activeInfoWindow === index && (
               <InfoWindow position={marker.position}>
