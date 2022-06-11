@@ -17,7 +17,6 @@ const PinSchema = new mongoose.Schema(
       required: true,
       min: 3,
     },
-    category: { type: String, required: true },
     long: {
       type: Number,
       required: true,
