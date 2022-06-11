@@ -1,11 +1,50 @@
-.navbar{
-    text-align: center;
-    background: rgb(148,187,233);
-    background: radial-gradient(circle, rgba(148,187,233,1) 0%, rgba(238,174,202,1) 100%); 
-    color: #fff;
-    height:10vh;
-    /*text appear on center*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navbar {
+  text-align: center;
+  background: rgb(148, 187, 233);
+  background: radial-gradient(
+    circle,
+    rgba(148, 187, 233, 1) 0%,
+    rgba(238, 174, 202, 1) 100%
+  );
+  color: #fff;
+  height: 10vh;
+  /*text appear on center*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formContainer {
+  max-width: 60vw;
+  margin-left: 10rem;
+}
+.formContainer form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column !important;
+  gap: 1.5rem;
+}
+.submit {
+  border-radius: 1rem;
+  margin-right: auto;
+  margin-left: autos;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 30vw;
+  transition: hover 0.2s ease;
+  color: #fff;
+  border: none;
+  background: rgba(238, 174, 202, 0.8);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 0.8) 0%,
+    rgba(148, 187, 233, 0.8) 100%
+  );
+}
+.submit:hover {
+  background: rgb(148, 187, 233);
+  background: radial-gradient(
+    circle,
+    rgba(148, 187, 233, 1) 0%,
+    rgba(238, 174, 202, 1) 100%
+  );
 }
