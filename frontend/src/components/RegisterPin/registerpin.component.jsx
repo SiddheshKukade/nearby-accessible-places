@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./registerpin.module.css";
 import * as Yup from "yup";
+import Button from '@mui/material/Button';
 import { Formik, Field, Form } from "formik";
-import InputForm from "../FormElements/Input/input.component";
 import TextField from "@mui/material/TextField";
 const RegisterPin = () => {
   const handleSubmit = (values) => {
@@ -25,6 +25,7 @@ const RegisterPin = () => {
             desc: "",
           }}
           onSubmit={handleSubmit}
+          className={styles.formikform}
         >
           <Form>
             <Field
@@ -37,22 +38,27 @@ const RegisterPin = () => {
               placeholder="Mr.John Doe"
             />
 
-            <Field    as={TextField}
+            <Field
+              as={TextField}
               variant="outlined"
               helperText="don't include address in title"
-              label="Name of the Shop/School/Place" id="title" name="title" placeholder="Ex. City hospital" />
+              label="Name of the Shop/School/Place"
+              id="title"
+              name="title"
+              placeholder="Ex. City hospital"
+            />
 
             <Field
-            as={TextField}
-            variant="outlined"
-            helperText="enter a brief description"
-            label="Description: "
+              as={TextField}
+              variant="outlined"
+              helperText="enter a brief description"
+              label="Description: "
               id="desc"
               name="desc"
               placeholder="Ex.We provide various sevices for disabled people like ...."
               type="textarea"
             />
-            <button type="submit">Submit</button>
+            <Button type="submit"  variant="outlined">Add to the Map</Button>
           </Form>
         </Formik>
       </div>

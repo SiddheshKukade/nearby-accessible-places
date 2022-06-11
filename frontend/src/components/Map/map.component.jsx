@@ -9,12 +9,14 @@ import {
 const MapComponent = () => {
   const [cLat, setcLat] = useState(20.0005);
   const [cLang, setcLang] = useState(70.0005);
+  const [lat, setLat] = useState(20.0045);
+  const [long, setLong] = useState(70.0005);
   const zoomLevel = 15; // default zoom level
   navigator.geolocation.getCurrentPosition((position) => {
     setcLat(position.coords.latitude);
     setcLang(position.coords.longitude);
   });
-  console.log("this iis the objr", cLat , cLang);
+  console.log("this iis the objr", cLat, cLang);
   const initialMarkers = [
     {
       position: {
@@ -72,7 +74,15 @@ const MapComponent = () => {
   };
 
   const mapClicked = (event) => {
-    console.log(event.latLng.lat(), event.latLng.lng());
+    setLong(event.latLng.lng());
+    setLat(event.latLng.lat());
+    console.log(
+      event.latLng.lat(),
+      event.latLng.lng(),
+      "styates are",
+      lat,
+      long
+    );
   };
 
   const markerClicked = (marker, index) => {
@@ -101,7 +111,6 @@ const MapComponent = () => {
             draggable={marker.draggable}
             onDragEnd={(event) => markerDragEnd(event, index)}
             onClick={(event) => markerClicked(marker, index)}
-            
           >
             {activeInfoWindow === index && (
               <InfoWindow position={marker.position}>
