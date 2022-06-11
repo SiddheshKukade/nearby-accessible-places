@@ -1,0 +1,11 @@
+{
+  "name": "backend-for-nearby-accesssible-places",
+  "version": "1.0.0",
+  "description": "Contains the server side code for nearby accessible places app created by @SiddheshKukade",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Siddhesh Bhupendra Kukade @siddhyaop",
+  "license": "MIT"
+}
