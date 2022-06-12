@@ -6,7 +6,9 @@ const userRoute = require("./routes/users");
 const pinRoute = require("./routes/pins");
 
 dotenv.config();
-
+// Cors Access
+var cors = require("cors");
+app.use(cors());
 app.use(express.json());
 //connecting to the Databse
 mongoose
@@ -17,9 +19,11 @@ mongoose
   })
   .then(() => console.log(" 😃 MongoDB connected!"))
   .catch((err) => consolen.log(err));
-
+app.get("/", (req, res) => {
+  res.send({ "we rollin": "good" });
+});
 app.use("/api/users", userRoute); //
-app.use("/api/pins", pinRoute); //enabling pins routes in the app 
+app.use("/api/pins", pinRoute); //enabling pins routes in the app
 
 app.listen(8800, () => {
   console.log(" 😊 Backend server is running!");
