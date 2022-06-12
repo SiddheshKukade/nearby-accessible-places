@@ -1,22 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import {
   GoogleMap,
   InfoWindow,
   LoadScript,
   Marker,
 } from "@react-google-maps/api";
+import { MapContext } from "../../App";
+import axios from "axios";
 
 const MapComponent = () => {
   const [cLat, setcLat] = useState(20.0005);
   const [cLang, setcLang] = useState(70.0005);
+
+  const [markersList, SetMarkersList] = useState([]);
+
   const [lat, setLat] = useState(20.0045);
   const [long, setLong] = useState(70.0005);
   const zoomLevel = 15; // default zoom level
+  let { selectedLatLng, setSelectedLatLng } = useContext(MapContext);
+
   navigator.geolocation.getCurrentPosition((position) => {
     setcLat(position.coords.latitude);
     setcLang(position.coords.longitude);
   });
-  console.log("this iis the objr", cLat, cLang);
   const initialMarkers = [
     {
       position: {
@@ -76,13 +82,7 @@ const MapComponent = () => {
   const mapClicked = (event) => {
     setLong(event.latLng.lng());
     setLat(event.latLng.lat());
-    console.log(
-      event.latLng.lat(),
-      event.latLng.lng(),
-      "styates are",
-      lat,
-      long
-    );
+    setSelectedLatLng({ lat: lat, lng: long });
   };
 
   const markerClicked = (marker, index) => {
@@ -94,7 +94,40 @@ const MapComponent = () => {
     console.log(event.latLng.lat());
     console.log(event.latLng.lng());
   };
+  const fetchPins = async () => {
+    try {
+      const res = await axios.get(
+        "https://8800-siddheshkuk-nearbyacces-09ftreuj6j1.ws-us47.gitpod.io/api/pins/"
+      );
+      const newData = res.data.map((arr, i) => {
+        return {
+          position: {
+            lat: arr.lat,
+            lng: arr.long,
+          },
+          label: {
+            color: "#000",
+            fontWeight: "bold",
+            fontSize: "2rem",
+            text: arr.title,
+          },
+          draggable: false,
+        };
+      });
+      SetMarkersList(res.data);
+      setMarkers(newData);
+      console.log("requqrt from the axios ge NEw datat ", res.data, newData);
+      // setPins([...pins, res.data]);
+      // setNewPlace(null);
+    } catch (err) {
+      console.log("Error at  fetching Pins ", err);
+    }
+  };
+  useEffect(() => {
+    fetchPins();
+  }, []);
 
+  console.log("markers list", markersList);
   return (
     <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_API_KEY}>
       <GoogleMap
@@ -103,8 +136,9 @@ const MapComponent = () => {
         zoom={zoomLevel}
         onClick={mapClicked}
       >
+        {console.log("markers list in hml", markers)}
         {markers.map((marker, index) => (
-          <Marker
+          <Marker onDblClick={handleClickLandMark}
             key={index}
             position={marker.position}
             label={marker.label}
