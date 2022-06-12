@@ -1,13 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./registerpin.module.css";
 import * as Yup from "yup";
-import Button from '@mui/material/Button';
+import axios from "axios";
+import Button from "@mui/material/Button";
 import { Formik, Field, Form } from "formik";
 import TextField from "@mui/material/TextField";
+import { MapContext, PinListContext } from "../../App";
 const RegisterPin = () => {
-  const handleSubmit = (values) => {
-    console.log("values", values);
+  let { selectedLatLng, setSelectedLatLng } = useContext(MapContext);
+  const { pinList, setPinList } = useContext(PinListContext);
+
+  const handleSubmit = async (values, e) => {
+    const { username, title, desc } = values;
+
+    const newPin = {
+      username: username,
+      title: title,
+      desc: desc,
+      long: selectedLatLng.lng,
+      lat: selectedLatLng.lat,
+    };
+
+    try {
+      const res = await axios.post(
+        "https://8800-siddheshkuk-nearbyacces-09ftreuj6j1.ws-us47.gitpod.io/api/pins/",
+        newPin
+      ); // replace with your server URL
+      console.log("Result of the form ", res);
+      // setPins([...pins, res.data]);
+      // setNewPlace(null);
+      setPinList((prev) => [...prev, newPin]);
+      console.log("new Pin Added to the lLIsts  ", pinList);
+    } catch (err) {
+      console.log(err);
+    }
   };
+
   return (
     <>
       {/* small heading */}
@@ -58,7 +86,9 @@ const RegisterPin = () => {
               placeholder="Ex.We provide various sevices for disabled people like ...."
               type="textarea"
             />
-            <Button type="submit"  variant="outlined">Add to the Map</Button>
+            <Button type="submit" variant="outlined">
+              Add to the Map
+            </Button>
           </Form>
         </Formik>
       </div>
@@ -67,81 +97,3 @@ const RegisterPin = () => {
 };
 
 export default RegisterPin;
-
-// const validationSchema = Yup.object({
-//   submitstudentName: Yup.string().required("name needed"),
-//   fatherName: Yup.string().required("fathername needed"),
-//   address: Yup.string()
-//     .min(20, "Must be 20 character or less")
-//     .required("address is required"),
-//   phone: Yup.string()
-//     .min(10, "Must be 10 characters")
-//     .required("phone is required"),
-//   selectStandard: Yup.string().required("please select standard"),
-//   dob: Yup.date("please give correct date"),
-//   refCode: Yup.string().required("Refercode is required"),
-// });
-
-// <Formik
-// className={styles.form}
-// initialValues={{
-//   username: "",
-//   title: "",
-// }}
-// validationSchema={validationSchema}
-// onSubmit={handleSubmit}
-// >
-// {(formik) => {
-//   const { errors, touched } = formik;
-
-//   return (
-//     <Form>
-//       <InputForm
-//         control="input"
-//         type="text"
-//         label="Name of the Owner"
-//         isTouched={touched.username}
-//         fullWidth="true"
-//         name="username"
-//         errMsg={errors.username}
-//         placeholder="Ex.Mr. John doe"
-//         className={styles.inputsIn}
-//       />
-//       <InputForm
-//         control="input"
-//         type="text"
-//         label="Name of the Shop"
-//         isTouched={touched.title}
-//         fullWidth="true"
-//         name="title"
-//         errMsg={errors.title}
-//         placeholder="Ex.Mr. John doe"
-//         className={styles.inputsIn}
-//       />
-//       <InputForm
-//         control="input"
-//         type="text"
-//         label="Name of the Shop "
-//         isTouched={touched.firstName}
-//         fullWidth="true"
-//         name="firstName"
-//         errMsg={errors.FirstName}
-//         placeholder="Ex. City Hospital"
-//         className={styles.inputsIn}
-//       />
-//       <InputForm
-//         control="input"
-//         type="text"
-//         label="Description of the shop"
-//         isTouched={touched.desc}
-//         fullWidth="true"
-//         name="desc"
-//         errMsg={errors.desc}
-//         placeholder="Ex.We provide various support for disabled peoples."
-//         className={styles.inputsIn}
-//       />
-//       <button type="submit">Submit</button>
-//     </Form>
-//   );
-// }}
-// </Formik>
