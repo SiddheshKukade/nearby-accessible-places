@@ -4,10 +4,10 @@ const mongoose = require("mongoose"); // library for handling mongodb connection
 const dotenv = require("dotenv"); // to enable using environment varaibles in the project
 const userRoute = require("./routes/users");
 const pinRoute = require("./routes/pins");
+var cors = require("cors");
 
 dotenv.config();
 // Cors Access
-var cors = require("cors");
 app.use(cors());
 app.use(express.json());
 //connecting to the Databse
