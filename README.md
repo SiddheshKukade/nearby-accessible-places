@@ -33,13 +33,16 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://user-images.githubusercontent.com/65951872/173240227-06c90df6-f917-4993-990f-297d53baef14.png" alt="ForAll - see nearby acessible places for disabled people" height="300" width="300">
   </a>
+ 
 
-  <h3 align="center">Best-README-Template</h3>
+
+  <h2 align="center">ForAll -  an application to search and register nearby acessible places for disabled people</h2>
+  <h3 align="center"></h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Created with MERN Stack & ❤️ by @SiddheshKukade
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
