@@ -11,6 +11,12 @@ const RegisterPin = () => {
   const { pinList, setPinList } = useContext(PinListContext);
 
   const handleSubmit = async (values, e) => {
+    if (selectedLatLng.lat == 0) {
+      alert(
+        "Please select a Location on Map Application will detect the location automatically."
+      );
+      return;
+    }
     const { username, title, desc } = values;
 
     const newPin = {
