@@ -162,6 +162,7 @@ const MapComponent = () => {
   };
   useEffect(() => {
     fetchPins();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pinList]);
 
   console.log("markers list", markersList);
