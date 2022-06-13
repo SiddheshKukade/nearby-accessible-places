@@ -30,8 +30,14 @@
   </p>
 </div>
 
-### Demo : [forAll.netlify.app](https://for-all.netlify.app/)
-![image](https://user-images.githubusercontent.com/65951872/173301837-60d74df1-a27e-4c70-a9bc-5cd1a4f6291e.png)
+##  Video Demo :  
+
+
+https://user-images.githubusercontent.com/65951872/173317702-47b7a8ce-6716-46d8-b936-892dbc0991ec.mp4
+
+
+### Demo : [forAll.netlify.app](https://for-all.netlify.app/) (Backend Deployment is in Progress. The URL may not work properly )
+
 
 
 <!-- TABLE OF CONTENTS -->
