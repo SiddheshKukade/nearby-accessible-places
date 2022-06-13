@@ -20,15 +20,13 @@
 [![License: MIT](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![GitHub stars](https://img.shields.io/github/stars/SiddheshKukade/nearby-accessible-places.svg?style=social&label=Star&maxAge=2592000)](https://github.com/PalisadoesFoundation/talawa-admin)
 [![GitHub forks](https://img.shields.io/github/forks/PalisadoesFoundation/talawa-admin.svg?style=social&label=Fork&maxAge=2592000)](https://github.com/PalisadoesFoundation/talawa-admin)
-[![Contributors][contributors-shield]][contributors-url]
+[![Contributors][contributors-shield](https://github.com/SiddheshKukade/nearby-accessible-places/graphs/contributors)]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
+[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/siddhesh-bhupendra-kukade-243980172/?trk=people-guest_people_search-card&originalSubdomain=in]
+ 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
