@@ -1,6 +1,7 @@
+
+/* eslint-disable no-unused-vars */
 import React, { useContext } from "react";
 import styles from "./registerpin.module.css";
-import * as Yup from "yup";
 import axios from "axios";
 import Button from "@mui/material/Button";
 import { Formik, Field, Form } from "formik";
@@ -11,6 +12,7 @@ const RegisterPin = () => {
   const { pinList, setPinList } = useContext(PinListContext);
 
   const handleSubmit = async (values, e) => {
+    // eslint-disable-next-line eqeqeq
     if (selectedLatLng.lat == 0) {
       alert(
         "Please select a Location on Map Application will detect the location automatically."

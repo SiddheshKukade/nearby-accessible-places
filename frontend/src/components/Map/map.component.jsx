@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState, useEffect } from "react";
 import {
   GoogleMap,
@@ -40,6 +41,7 @@ const MapComponent = () => {
   const [lat, setLat] = useState(20.0045);
   const [long, setLong] = useState(70.0005);
   const zoomLevel = 15; // default zoom level
+  // eslint-disable-next-line no-unused-vars
   let { selectedLatLng, setSelectedLatLng } = useContext(MapContext);
 
   const [open, setOpen] = React.useState(false);
