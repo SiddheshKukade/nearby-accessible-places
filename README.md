@@ -53,7 +53,7 @@ https://user-images.githubusercontent.com/65951872/173317702-47b7a8ce-6716-46d8-
     <li>
       <a href="#installation">Installation</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
+  
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -74,7 +74,7 @@ Smart India Hackathon is a nationwide initiative to provide students with a plat
 ## Problem Statement :
 ![image](https://user-images.githubusercontent.com/65951872/173175282-721524eb-0b53-4ca2-870d-832609dd2928.png)
 
-# nearby-accessible-places
+# ForAll
 ### An Application where people can register thier Buildings , officies , public places, marketplaces &amp; and schools as accessible. Where a disabled person can find them easily
  
  
@@ -113,17 +113,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
+ 
 
 
 <!-- ROADMAP -->
