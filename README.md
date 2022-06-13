@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-[![License: MIT](https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0)
+![License: MIT](https://img.shields.io/badge/LICESNSE-MIT-blue?style=for-the-badge)
 ![Issues Open ](https://img.shields.io/github/issues/SiddheshKukade/nearby-accessible-places?style=for-the-badge)
 ![Forks ](https://img.shields.io/github/forks/SiddheshKukade/nearby-accessible-places?style=for-the-badge)
 ![Stars](https://img.shields.io/github/stars/SiddheshKukade/nearby-accessible-places?style=for-the-badge)
