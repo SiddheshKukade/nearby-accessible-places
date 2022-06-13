@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useContext, createContext } from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState, createContext } from "react";
 import MapComponent from "./components/Map/map.component";
 import styles from "./App.module.css"; // Import css modules stylesheet as styles
 import RegisterPin from "./components/RegisterPin/registerpin.component";
