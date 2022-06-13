@@ -1,6 +1,6 @@
 
 /* eslint-disable no-unused-vars */
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./registerpin.module.css";
 import axios from "axios";
 import Button from "@mui/material/Button";
@@ -10,7 +10,11 @@ import { MapContext, PinListContext } from "../../App";
 const RegisterPin = () => {
   let { selectedLatLng, setSelectedLatLng } = useContext(MapContext);
   const { pinList, setPinList } = useContext(PinListContext);
-
+  const [formValues , setFormValues] = useState({
+    username: "",
+    title: "",
+    desc: "",
+  })
   const handleSubmit = async (values, e) => {
     // eslint-disable-next-line eqeqeq
     if (selectedLatLng.lat == 0) {
@@ -35,10 +39,16 @@ const RegisterPin = () => {
         newPin
       ); // replace with your server URL
       console.log("Result of the form ", res);
+      setFormValues({
+        username: "",
+        title: "",
+        desc: "",
+      })
       // setPins([...pins, res.data]);
       // setNewPlace(null);
       setPinList((prev) => [...prev, newPin]);
       console.log("new Pin Added to the lLIsts  ", pinList);
+
     } catch (err) {
       console.log(err);
     }
@@ -55,11 +65,7 @@ const RegisterPin = () => {
       {/* form to register  */}
       <div className={styles.formContainer}>
         <Formik
-          initialValues={{
-            username: "",
-            title: "",
-            desc: "",
-          }}
+          initialValues={formValues}
           onSubmit={handleSubmit}
           className={styles.formikform}
         >
