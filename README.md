@@ -30,6 +30,7 @@
   </p>
 </div>
 
+
 ##  Video Demo :  
 
 
@@ -183,3 +184,9 @@ Project Link: [https://github.com/SiddheshKukade/nearby-accessible-places/](http
 * [Heroku ](https://www.heroku.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+#### Devfolio - [devfolio.co/projects/nearbyaccessibleplaces](https://devfolio.co/projects/nearbyaccessibleplaces-4663) 
+
+
