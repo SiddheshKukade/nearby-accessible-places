@@ -33,10 +33,8 @@ const RegisterPin = () => {
       const res = await axios.post(
         "https://8800-siddheshkuk-nearbyacces-09ftreuj6j1.ws-us47.gitpod.io/api/pins/",
         newPin
-      ); // replace with your server URL
+      );
       console.log("Result of the form ", res);
-      // setPins([...pins, res.data]);
-      // setNewPlace(null);
       setPinList((prev) => [...prev, newPin]);
       console.log("new Pin Added to the lLIsts  ", pinList);
     } catch (err) {

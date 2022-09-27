@@ -45,7 +45,6 @@ function App() {
               <MapComponent />
             </div>
             <div className={styles.register}>
-              {" "}
               <RegisterPin />
             </div>
           </div>
