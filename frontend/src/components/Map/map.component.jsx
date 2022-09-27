@@ -153,9 +153,6 @@ const MapComponent = () => {
       SetMarkersList(res.data);
       setMarkers(newData);
       setPinList((prev) => [...prev, ...newData]);
-      console.log("requqrt from the axios ge NEw datat ", res.data);
-      // setPins([...pins, res.data]);
-      // setNewPlace(null);
     } catch (err) {
       console.log("Error at  fetching Pins ", err);
     }
@@ -165,10 +162,8 @@ const MapComponent = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pinList]);
 
-  console.log("markers list", markersList);
   return (
     <>
-      {" "}
       <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_API_KEY}>
         <GoogleMap
           mapContainerStyle={containerStyle}
@@ -176,7 +171,6 @@ const MapComponent = () => {
           zoom={zoomLevel}
           onClick={mapClicked}
         >
-          {console.log("markers list in hml", markers)}
           {pinList.map((marker, index) => (
             <Marker
               key={index}
